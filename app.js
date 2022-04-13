@@ -1,9 +1,8 @@
-let http = require("http");
+const EXPRESS = require ("express");
+const APP = EXPRESS();
 
-http.createServer(function(req, res) {
+APP.listen(3030, ()=>(consol.log("Servidor Corriendo")));
 
-    res.writeHead(200, {"Content-Type": "text/plain"});
-
-    res.end("prueba pagina fede");
-
-}).listen(3030, "localhost");
+APP.get("/", function(req, res){
+    res.end("Pagina Web para clonar")
+});
